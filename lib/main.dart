@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Client Visit App',
+        title: 'Test App',
         theme: ThemeData(primarySwatch: Colors.blue),
         home: const LoginScreen(),
       ),
