@@ -14,9 +14,8 @@ class ClientProvider extends ChangeNotifier {
     try {
       final res = await _api.getClientByNIC(nic);
       if (res.statusCode == 200 && res.data is List) {
-        clients = (res.data as List)
-            .map((json) => Client.fromJson(json))
-            .toList();
+        clients =
+            (res.data as List).map((json) => Client.fromJson(json)).toList();
       }
     } catch (e) {
       print("Error: $e");
@@ -30,7 +29,7 @@ class ClientProvider extends ChangeNotifier {
       final res = await _api.saveClientVisit(client.toJson());
       return res.statusCode == 200;
     } catch (e) {
-      print("Save error: $e");
+      print("Save errors: $e");
       return false;
     }
   }
